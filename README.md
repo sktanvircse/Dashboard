@@ -75,4 +75,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## About
 I create a dashboard. For my practise.
 
-# If you have sugesstion, Contact me.
+## If you have sugesstion, Contact me.
