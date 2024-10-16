@@ -70,4 +70,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
 
 
-<h1>Hi , It is my Dashboard.</h1>
+### Hi , It is my Dashboard.
+
+## About
+I create a dashboard. For my practise.
+
+# If you have sugesstion, Contact me.
