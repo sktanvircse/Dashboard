@@ -1,34 +1,124 @@
-
-
 .form-section {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  .form-card {
-    justify-content: start;
-    border-radius: 2px;
-    background-color: #fcfcfc;
-    padding: 20px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 34, 144, 0.1);
-    font-size: 12px;
-    font-weight: 500;
-    color: black;
-  }
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 
-  .app-input {
-    height: 27px !important ;
-    padding: 2px 8px;
-    border: 1px solid rgba(231, 231, 231, 0.993);
-    border-radius: 4px;
-    margin-bottom: 5px;
-    box-sizing: border-box;
-    color: #2c3e50;
-    font-size: 14px;
-    background-color: white;
-    z-index: 0;
+.form-card {
+  justify-content: start;
+  border-radius: 2px;
+  background-color: #fcfcfc;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 34, 144, 0.1);
+  font-size: 12px;
+  font-weight: 500;
+  color: black;
+}
+
+.app-input {
+  height: 27px !important;
+  padding: 2px 8px;
+  border: 1px solid rgba(231, 231, 231, 0.993);
+  border-radius: 4px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  color: #2c3e50;
+  font-size: 14px;
+  background-color: white;
+  z-index: 0;
+}
+
+.app-input:hover {
+  border: 1px solid #8eabfc;
+  box-shadow: 0px 0px 2px 2px rgba(0, 38, 144, 0.1);
+}
+
+/* Container for layout */
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/* Main content area with responsive adjustment */
+.main-content {
+  margin-left: 60px;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar-open .main-content {
+  margin-left: 250px;
+}
+
+/* Basic sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+/* Open state for sidebar */
+.sidebar.open {
+  position: fixed;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+/* Sidebar links */
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.sidebar ul li {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-items: center;
+  display: flex;
+  gap: 30px;
+}
+/* Hover effect on sidebar items */
+.sidebar ul li:hover {
+  background-color: #555;
+  color: #ddd;
+  cursor: pointer;
+}
+/* Toggle button */
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #555;
+  color: #ddd;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* Hover effect on toggle button */
+.toggle-button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .sidebar {
+    left: 0;
+    position: relative;
+    width: 250px;
+    height: auto;
+    padding-top: 0;
   }
-  .app-input:hover {
-    border: 1px solid #8eabfc;
-    box-shadow: 0px 0px 2px 2px rgba(0, 38, 144, 0.1);
-  }
+}
