@@ -30,7 +30,7 @@ const Dashboard = () => {
       fontFamily: 'Arial, sans-serif',
       backgroundColor: '#f4f7fc',
       color: '#333',
-      margin: '0 auto',
+      margin: '20px auto',
       padding: '20px',
       maxWidth: '1500px',
       borderRadius: '8px',
