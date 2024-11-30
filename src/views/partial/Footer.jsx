@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Linkedin, Instagram, GitHub } from 'react-feather';
+import { Facebook, Linkedin, GitHub } from 'react-feather';
 
 const Footer = () => {
   return (

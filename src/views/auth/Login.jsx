@@ -1,5 +1,5 @@
 import React, { useState, useTransition } from 'react'
-import { useNavigate, useParams, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Input, Form, Row, Col, Button } from "reactstrap";
 import sidePhoto from '../../assets/images/vecteezy_futuristic-technology-concept-mixed-media-innovations-data_7019122.jpg'
 import { Copy } from "react-feather";
