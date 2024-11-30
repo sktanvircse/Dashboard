@@ -5,18 +5,26 @@ import Layout from "./configs/Layout";
 
 const Login = lazy(() => import("./views/auth/Login"));
 const Dashboard = lazy(() => import("./views/pages/Dashboard/index.jsx"));
+const About = lazy(() => import("./views/pages/About/index.jsx"));
 
 const AppRouter = () => {
     return (
         <BrowserRouter>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path="" element={<Navigate to="/login" />} />
-                    <Route path="/" element={<Navigate to="/login" />} />
                     <Route path="/login" element={<Login />} />
-                    <Route element={<Layout />}>
-                        <Route path="/dashboard" element={<Dashboard />} />
-                    </Route>
+                    <Route 
+                        path="/*" 
+                        element={
+                            <Layout>
+                                <Routes>
+                                    <Route path="/dashboard" element={<Dashboard />} />
+                                    <Route path="/about" element={<About />} />
+                                    <Route path="*" element={<Navigate to="/dashboard" />} />
+                                </Routes>
+                            </Layout>
+                        } 
+                    />
                 </Routes>
             </Suspense>
         </BrowserRouter>

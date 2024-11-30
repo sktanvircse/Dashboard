@@ -9,16 +9,18 @@ const Navber = ({ isOpen, toggleSidebar }) => {
         {isOpen ? <ChevronLeft /> : <ChevronRight />}
       </button>
       <ul className="menu-list">
-        <Link to="/dashboard" className='text-white' style={{textDecoration:"none"}}>
+        <Link to="/dashboard" className='text-white' style={{ textDecoration: "none" }}>
           <li>
             <Home />
             {isOpen && <span>Home</span>}
           </li>
         </Link>
-        <li>
-          <Info />
-          {isOpen && <span>About</span>}
-        </li>
+        <Link to="/about" className='text-white' style={{ textDecoration: "none" }}>
+          <li>
+            <Info />
+            {isOpen && <span>About</span>}
+          </li>
+        </Link>
         <li>
           <Briefcase />
           {isOpen && <span>Work</span>}
