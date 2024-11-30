@@ -39,6 +39,7 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
 /* Main content area with responsive adjustment */
 .main-content {
   margin-left: 60px;
@@ -46,79 +47,127 @@
   transition: margin-left 0.3s ease;
 }
 
+/* Main content shift when sidebar is open */
 .sidebar-open .main-content {
-  margin-left: 250px;
+  margin-left: 250px; /* Matches the sidebar's open width */
+  transition: margin-left 0.3s ease;
 }
 
 /* Basic sidebar styling */
 .sidebar {
   position: fixed;
   top: 0;
-  width: 60px;
+  left: 0;
+  width: 60px; /* Default closed width */
   height: 100%;
   background-color: #333;
   color: #fff;
-  transition: left 0.3s ease;
+  transition: width 0.3s ease, left 0.3s ease;
   padding-top: 60px;
+  overflow: hidden; /* Hide content when closed */
+  z-index: 1000;
 }
 
 /* Open state for sidebar */
 .sidebar.open {
-  position: fixed;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  background-color: #333;
-  color: #fff;
-  transition: left 0.3s ease;
-  padding-top: 60px;
+  width: 250px; /* Opened width */
 }
+
 /* Sidebar links */
 .sidebar ul {
   list-style-type: none;
   padding: 0;
-  margin-top: 20px;
+  margin: 20px 0 0;
 }
+
 .sidebar ul li {
   padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between icon and text */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  align-items: center;
-  display: flex;
-  gap: 30px;
 }
-/* Hover effect on sidebar items */
+
 .sidebar ul li:hover {
   background-color: #555;
   color: #ddd;
-  cursor: pointer;
 }
+
+/* Sidebar item text visibility */
+.sidebar ul li span {
+  display: none; /* Hidden by default */
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.sidebar.open ul li span {
+  display: inline; /* Shown when sidebar is open */
+}
+
 /* Toggle button */
 .toggle-button {
-  position: fixed;
+  position: absolute;
   top: 20px;
-  left: 20px;
+  right: -15px; /* Position outside the sidebar */
+  background-color: #fff;
+  color: #444;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1200;
+}
+
+.toggle-button:hover {
   background-color: #555;
   color: #ddd;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
+
 /* Hover effect on toggle button */
 .toggle-button:hover {
   background-color: #fff;
   color: #333;
 }
 
-
-/* Responsive styling */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
   .sidebar {
-    left: 0;
-    position: relative;
-    width: 250px;
-    height: auto;
-    padding-top: 0;
+    width: 50px; /* Smaller width for smaller screens */
+  }
+
+  .sidebar.open {
+    width: 200px; /* Reduced open width */
+  }
+
+  .toggle-button {
+    right: -15px; /* Adjust toggle button position */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 40px; /* Minimal width for very small screens */
+  }
+
+  .sidebar.open {
+    width: 180px; /* Minimal open width */
+  }
+
+  .sidebar ul li {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .toggle-button {
+    right: -10px; /* Adjust toggle button position */
+    width: 35px;
+    height: 35px;
   }
 }
