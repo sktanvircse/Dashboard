@@ -43,9 +43,20 @@ const Dashboard = () => {
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
     },
     heading: {
-      color: '#4f8df7',
-      textAlign: 'center',
-      marginBottom: '20px',
+      fontSize: '2.5rem', // Size of the heading
+      fontWeight: 'bold', // Bold text
+      color: '#4A90E2', // Light blue color for the text
+      textAlign: 'center', // Center the header
+      textTransform: 'uppercase', // Uppercase the text
+      letterSpacing: '2px', // Add space between letters
+      marginBottom: '40px', // Space below the header
+      background: 'linear-gradient(135deg, #4A90E2, #50E3C2)', // Gradient background
+      color: 'transparent', // Text color becomes transparent to show the gradient
+      WebkitBackgroundClip: 'text', // Clip the background to text (works in webkit browsers)
+      fontFamily: '"Segoe UI", Tahoma, Geneva, Verdana, sans-serif', // Clean, modern font
+      // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', // Shadow effect for depth
+      padding: '10px', // Padding around the text
+      transition: 'transform 0.3s ease-in-out', // Add a transition for hover effect
     },
     skillChart: {
       maxWidth: '800px',
@@ -60,7 +71,7 @@ const Dashboard = () => {
 
   return (
     <div style={dashboardStyles.container}>
-      <h1 style={dashboardStyles.heading}>Resume Dashboard</h1>
+      <h1 style={dashboardStyles.heading}>My Dashboard</h1>
 
       {/* Personal Information Section */}
       <section style={dashboardStyles.section}>
