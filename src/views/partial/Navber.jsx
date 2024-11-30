@@ -18,7 +18,7 @@ const Navber = ({ isOpen, toggleSidebar }) => {
         </li>
         <li>
           <Briefcase />
-          {isOpen && <span>Services</span>}
+          {isOpen && <span>Work</span>}
         </li>
         <li>
           <Mail />
