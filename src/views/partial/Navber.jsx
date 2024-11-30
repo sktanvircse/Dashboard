@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Home, Info, Briefcase, Mail, ChevronLeft, ChevronRight } from 'react-feather';
 
 const Navber = ({ isOpen, toggleSidebar }) => {
@@ -8,10 +9,12 @@ const Navber = ({ isOpen, toggleSidebar }) => {
         {isOpen ? <ChevronLeft /> : <ChevronRight />}
       </button>
       <ul className="menu-list">
-        <li>
-          <Home />
-          {isOpen && <span>Home</span>}
-        </li>
+        <Link to="/dashboard" className='text-white' style={{textDecoration:"none"}}>
+          <li>
+            <Home />
+            {isOpen && <span>Home</span>}
+          </li>
+        </Link>
         <li>
           <Info />
           {isOpen && <span>About</span>}
