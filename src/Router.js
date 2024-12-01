@@ -7,6 +7,7 @@ const Login = lazy(() => import("./views/auth/Login"));
 const Dashboard = lazy(() => import("./views/pages/Dashboard/index.jsx"));
 const About = lazy(() => import("./views/pages/About/index.jsx"));
 const SocketChat = lazy(() => import("./views/pages/SocketChat/SocketChat.jsx"));
+const Tabel = lazy(() => import("./views/pages/Table/index.jsx"));
 
 const AppRouter = () => {
     return (
@@ -14,21 +15,21 @@ const AppRouter = () => {
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
                     <Route path="/login" element={<Login />} />
-                    <Route 
-                        path="/*" 
+                    <Route
+                        path="/*"
                         element={
                             <Layout>
                                 <Routes>
                                     <Route path="*" element={<Navigate to="/dashboard" />} />
                                     <Route path="/dashboard" element={<Dashboard />} />
                                     <Route path="/about" element={<About />} />
+                                    <Route path="/tabel" element={<Tabel />} />
 
 
-                                    
                                     <Route path="/chate" element={<SocketChat />} />
                                 </Routes>
                             </Layout>
-                        } 
+                        }
                     />
                 </Routes>
             </Suspense>

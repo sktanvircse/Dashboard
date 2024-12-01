@@ -47,6 +47,10 @@ const TansTackTable = ({
     setOpen(false);
   });
 
+  useEffect(()=>{
+    console.log("Tabel")
+  },[])
+
   function useClickOutside(ref, onClickOutside) {
     useEffect(() => {
       function handleClickOutside(event) {

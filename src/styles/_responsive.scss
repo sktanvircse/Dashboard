@@ -1,0 +1,134 @@
+@media only screen and (max-width: 1440px) {
+    .navbar-submenu {
+      width: 60vw !important;
+    }
+    .main-section {
+      overflow: auto;
+      padding: 20px;
+      height: 90vh;
+    }
+  }
+  @media only screen and (max-width: 1280px) {
+    .card {
+      width: 390px !important;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .card {
+      width: 370px !important;
+      margin: 5px !important
+    }
+    .main-section {
+      overflow: auto;
+      padding: 20px;
+      height: 85vh;
+    }
+    .form-card {
+      width: 95vw;
+    }
+    .table-footer {
+      margin-bottom: 20px;
+    }
+    .load-button, .add-button {
+      min-width: 45px;
+    }
+    .product-auth {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    
+    }
+    .navbar-submenu {
+      width: 48vw !important;
+    }
+    .navbar-profile {
+      display: flex;
+      justify-content: end;
+      width: 34%;
+    }
+  
+  }
+  @media only screen and (max-width: 768px) {
+    .card {
+      width: 390px !important;
+    }
+    .navbar-fixed-top, .navbar-fixed-bottom {
+      position: fixed !important;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+    }
+    .main-section {
+      margin-top: 50px;
+      overflow: auto;
+      padding: 20px;
+      height: 92vh;
+    }
+    .page-header-section {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+    .header-title {
+      justify-content: end;
+      margin-bottom: 10px;
+    }
+    .header-filter {
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      gap: 5px;
+    }
+    .date-status-section {
+      flex-direction: column;
+    }
+    .form-card {
+      width: 90vw;
+    }
+    .page-search {
+      padding-left: 2.5rem;
+      margin-left: 2rem;
+    }
+    .details-header {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 4px;
+    }
+    .table-container {
+      max-height: 58vh;
+    }
+    .table-footer {
+      flex-direction: column-reverse;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .table-action {
+      flex-direction: column;
+      align-items: end;
+    }
+    
+    .load-button, .add-button {
+      min-width: 45px;
+    }
+    //loader......
+    .loader {
+      height: 400px;
+      width: 600px;
+    }
+    .product-auth {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 30px;
+    
+    }
+  
+  
+  }
+  

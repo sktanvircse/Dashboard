@@ -21,7 +21,7 @@ const Navber = ({ isOpen, toggleSidebar }) => {
             {isOpen && <span>About</span>}
           </li>
         </Link>
-        <Link className='text-white' style={{ textDecoration: "none" }}>
+        <Link to="/tabel" className='text-white' style={{ textDecoration: "none" }}>
           <li>
             <Table />
             {isOpen && <span>Table</span>}
