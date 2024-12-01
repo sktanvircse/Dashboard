@@ -3,7 +3,7 @@ import Navber from '../views/partial/Navber';
 import Footer from '../views/partial/Footer';
 
 const Layout = ({ children }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
