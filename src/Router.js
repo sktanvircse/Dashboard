@@ -6,6 +6,7 @@ import Layout from "./configs/Layout";
 const Login = lazy(() => import("./views/auth/Login"));
 const Dashboard = lazy(() => import("./views/pages/Dashboard/index.jsx"));
 const About = lazy(() => import("./views/pages/About/index.jsx"));
+const SocketChat = lazy(() => import("./views/pages/SocketChat/SocketChat.jsx"));
 
 const AppRouter = () => {
     return (
@@ -18,9 +19,13 @@ const AppRouter = () => {
                         element={
                             <Layout>
                                 <Routes>
+                                    <Route path="*" element={<Navigate to="/dashboard" />} />
                                     <Route path="/dashboard" element={<Dashboard />} />
                                     <Route path="/about" element={<About />} />
-                                    <Route path="*" element={<Navigate to="/dashboard" />} />
+
+
+                                    
+                                    <Route path="/chate" element={<SocketChat />} />
                                 </Routes>
                             </Layout>
                         } 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Home, Info, Briefcase, Mail, ChevronLeft, ChevronRight } from 'react-feather';
+import { Home, Info, Briefcase, Mail, ChevronLeft, ChevronRight, Table } from 'react-feather';
 
 const Navber = ({ isOpen, toggleSidebar }) => {
   return (
@@ -19,6 +19,12 @@ const Navber = ({ isOpen, toggleSidebar }) => {
           <li>
             <Info />
             {isOpen && <span>About</span>}
+          </li>
+        </Link>
+        <Link className='text-white' style={{ textDecoration: "none" }}>
+          <li>
+            <Table />
+            {isOpen && <span>Table</span>}
           </li>
         </Link>
         <li>
