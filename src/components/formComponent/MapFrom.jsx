@@ -64,7 +64,7 @@ const MapFrom = () => {
     const onSubmit = (values) => {
         console.log("values", values)
     };
-    const { values, setValues, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, setValues, handleChange, handleSubmit } = useFormik({
         initialValues,
         onSubmit,
         validationSchema,
@@ -78,8 +78,26 @@ const MapFrom = () => {
 
     return (
         <>
-            <div className='flex justify-center'>
-                <Form className="form-section h-75vh" onSubmit={handleSubmit}>
+            <div className="main-section">
+                <div className="page-header-section">
+                    <p>
+                        <span className="header-title">
+                            <span className="text-brand ">Map For Latitude & Longitude</span>
+                        </span>
+                    </p>
+                    <button
+                        type="button"
+                        name="btnSubmit"
+                        onClick={handleSubmitAll}
+                        className="btn bg-brand text-white py-1"
+                    >
+                        <i className="fas fa-save"></i>{" "}Submit
+                    </button>
+                </div>
+
+
+
+                <Form className="form-section" onSubmit={handleSubmit}>
                     <Row className={`form-card justify-center ${mobileView ? "w-90vw" : tabView ? "w-70vw" : "w-80vw"} `}>
 
                         <Col className="mt-2 flex g-10 col-lg-6 col-md-6 col-12">

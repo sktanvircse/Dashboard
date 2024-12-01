@@ -27,7 +27,26 @@
   background-color: white;
   z-index: 0;
 }
-
+.main-section {
+  // margin-top: 40px;
+  overflow: auto;
+  padding: 20px;
+  height: 77vh;
+}
+.page-header-section {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.header-title {
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  font-size: 14px;
+  font-weight: 700;
+  gap: 5px;
+}
 .app-input:hover {
   border: 1px solid #8eabfc;
   box-shadow: 0px 0px 2px 2px rgba(0, 38, 144, 0.1);

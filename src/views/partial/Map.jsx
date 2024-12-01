@@ -85,10 +85,10 @@ const Map = ({ onSelectLocation, onClose, latitude, longitude }) => {
           Close
         </button>
       </div>
-      {/* <div>
+      <div>
         <p>Selected Latitude: {selectedLatitude}</p>
         <p>Selected Longitude: {selectedLongitude}</p>
-      </div> */}
+      </div>
     </>
   );
 };
