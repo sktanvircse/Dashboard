@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/index.scss";
 import {
   useReactTable,
@@ -9,7 +9,7 @@ import {
   getPaginationRowModel,
   getExpandedRowModel,
 } from "@tanstack/react-table";
-import { Filter, Menu } from "react-feather";
+import { Filter } from "react-feather";
 import { useMediaQuery } from "react-responsive";
 
 const TansTackTable = ({
@@ -26,7 +26,6 @@ const TansTackTable = ({
   globalSearch = "Search...",
 }) => {
   const mobileView = useMediaQuery({ query: "(max-width: 767px)" });
-  const tabView = useMediaQuery({ query: "(max-width: 1500px)" });
   const defaultColumn = React.useMemo(() => {
     return {
       youTubeProp: "hello world",
@@ -36,7 +35,6 @@ const TansTackTable = ({
   const [sorting, setSorting] = useState([]);
   const [filtering, setFiltering] = useState("");
   const [columnVisibility, setColumnVisibility] = useState({});
-  const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState({});
   const [originalData, setOriginalData] = useState([]);
   const [expanded, setExpanded] = useState({});
