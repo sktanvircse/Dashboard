@@ -20,7 +20,6 @@ const TansTackTable = ({
   isSorting,
   collumnfilter,
   globalFiltering,
-  columnPinning,
   columnVisible,
   autoExpandEnabled,
   height = "table-min-height",
@@ -42,30 +41,6 @@ const TansTackTable = ({
   const [originalData, setOriginalData] = useState([]);
   const [expanded, setExpanded] = useState({});
 
-  const wrapperRef = useRef("menu");
-  useClickOutside(wrapperRef, () => {
-    setOpen(false);
-  });
-
-  useEffect(()=>{
-    console.log("Tabel")
-  },[])
-
-  function useClickOutside(ref, onClickOutside) {
-    useEffect(() => {
-      function handleClickOutside(event) {
-        if (ref.current && !ref.current.contains(event.target)) {
-          onClickOutside();
-        }
-      }
-      // Bind
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => {
-        // dispose
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    }, [ref, onClickOutside]);
-  }
 
   const tableInstance = useReactTable({
     columns: columns,
@@ -170,54 +145,6 @@ const TansTackTable = ({
       )}
 
       <div className={`table-container ${height}`}>
-        <div className="" ref={wrapperRef}>
-          {columnPinning && (
-            <>
-              <div className="menu column-pinning">
-                <Menu
-                  onClick={() => setOpen(!open)}
-                  className="column-pinning-icon"
-                />
-              </div>
-              {open && (
-                <div className="position-absolute toggle-bar pb-30">
-                  <div className="p-15 border-b border-black text-start bg-gray">
-                    <label className="main text-12 font-400 text-gray-500">
-                      <input
-                        {...{
-                          type: "checkbox",
-                          checked: tableInstance?.getIsAllColumnsVisible(),
-                          onChange:
-                            tableInstance?.getToggleAllColumnsVisibilityHandler(),
-                        }}
-                      />{" "}
-                      Select All
-                      <span className="check-box"></span>
-                    </label>
-                  </div>
-                  {tableInstance?.getAllLeafColumns()?.map((column) => {
-                    return (
-                      <div key={column.id} className="px-15 text-start">
-                        <label className="main text-12 font-400 text-gray-500">
-                          <input
-                            {...{
-                              type: "checkbox",
-                              checked: column.getIsVisible(),
-                              onChange: column.getToggleVisibilityHandler(),
-                            }}
-                          />{" "}
-                          {column.columnDef.header}
-                          <span className="check-box"></span>
-                        </label>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </>
-          )}
-        </div>
-
         <table>
           <thead>
             {tableInstance?.getHeaderGroups()?.map((headerEl) => {
