@@ -1,37 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { createColumnHelper } from "@tanstack/react-table";
 import TansTackTable from "../../../components/sharedComponent/TansTackTable";
+import Data from "../../partial/data.json"
 
 
 const Table = () => {
-
     const [data, setData] = useState([]);
+
+    useEffect(()=>{
+        setData(Data)
+    },[])
 
 
     const columnHelper = createColumnHelper();
     const columns = [
-        columnHelper.accessor("sl", {
-            header: "SL",
+        columnHelper.accessor("id", {
+            header: "ID",
             enableColumnFilter: false,
             size: "30px",
         }),
-        columnHelper.accessor("", {
-            header: "Consumption Date",
+        columnHelper.accessor("first_name", {
+            header: "First Name",
             // size: "150px",
         }),
-        columnHelper.accessor("", {
-            header: "Amount",
+        columnHelper.accessor("last_name", {
+            header: "Last Name",
             // size: "100px",
-            meta: {
-                type: "number"
-            }
         }),
-        columnHelper.accessor("remarks", {
-            header: "Remarkes",
+        columnHelper.accessor("email", {
+            header: "Email",
             // size: "150px",
         }),
-        columnHelper.accessor("status", {
-            header: "Status",
+        columnHelper.accessor("date", {
+            header: "Entry Date",
+            // size: "100px",
+        }),
+        columnHelper.accessor("gender", {
+            header: "Gender",
             // size: "100px",
         }),
     ];
@@ -43,9 +48,8 @@ const Table = () => {
                 columns={columns}
                 data={data}
                 tableFooter
-                // isSorting
-                // collumnfilter
-                // columnPinning
+                isSorting
+                collumnfilter
             />
         </>
     )
