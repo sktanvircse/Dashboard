@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Home, Info, Briefcase, Mail, ChevronLeft, ChevronRight, Table, Map , MapPin } from 'react-feather';
+import { Home, Info, Briefcase, Mail, ChevronLeft, ChevronRight, Table, Map, MapPin } from 'react-feather';
 
 const Navber = ({ isOpen, toggleSidebar }) => {
   return (
@@ -31,6 +31,12 @@ const Navber = ({ isOpen, toggleSidebar }) => {
           <li>
             <MapPin />
             {isOpen && <span>Map For Lat-Long</span>}
+          </li>
+        </Link>
+        <Link to="/coordinatesMap" className='text-white' style={{ textDecoration: "none" }}>
+          <li>
+            <Map />
+            {isOpen && <span>Map For Coordinates</span>}
           </li>
         </Link>
         <li>

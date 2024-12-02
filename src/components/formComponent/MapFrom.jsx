@@ -55,7 +55,6 @@ const MapFrom = () => {
 
     const initialValues = {
         id: 0,
-        route_coordinates: "",
         destin_lat: "",
         destin_long: "",
     };

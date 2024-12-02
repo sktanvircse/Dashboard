@@ -9,6 +9,7 @@ const About = lazy(() => import("./views/pages/About/index.jsx"));
 const SocketChat = lazy(() => import("./views/pages/SocketChat/SocketChat.jsx"));
 const Tabel = lazy(() => import("./views/pages/Table/index.jsx"));
 const Map = lazy(() => import("./components/formComponent/MapFrom.jsx"));
+const CoordinatesMap = lazy(() => import("./components/formComponent/CoordinatesMapFrom.jsx"));
 
 const AppRouter = () => {
     return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
                                     <Route path="/about" element={<About />} />
                                     <Route path="/tabel" element={<Tabel />} />
                                     <Route path="/map" element={<Map />} />
+                                    <Route path="/coordinatesMap" element={<CoordinatesMap />} />
 
 
                                     <Route path="/chate" element={<SocketChat />} />
